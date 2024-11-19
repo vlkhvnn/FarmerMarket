@@ -2,9 +2,8 @@ import SwiftUI
 
 struct OrdersView: View {
     let orders = [
-        Order(orderNumber: "11111", images: ["photo", "photo", "photo"]),
-        Order(orderNumber: "11111", images: ["photo", "photo", "photo"]),
-        Order(orderNumber: "11111", images: ["photo", "photo", "photo"])
+        Order(orderNumber: "11111", images: ["bananas", "apples", "tomatoes"]),
+        Order(orderNumber: "11111", images: ["tomatoes", "bananas", "oranges"])
     ]
 
     var body: some View {
@@ -52,7 +51,7 @@ struct OrderItemRow: View {
             // Order Images
             HStack {
                 ForEach(order.images, id: \.self) { imageName in
-                    Image(systemName: imageName)
+                    Image(imageName)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 50, height: 50)

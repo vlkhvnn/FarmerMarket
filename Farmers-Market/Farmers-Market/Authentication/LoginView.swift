@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @Binding var role: String // Tracks the user's role ('farmer' or 'buyer')
-    @Binding var isLoggedIn: Bool
+    @Binding var role: Role // Tracks the user's role ('farmer' or 'buyer')
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isPasswordVisible: Bool = false
@@ -36,7 +35,7 @@ struct LoginView: View {
                         SecureField("Password", text: $password)
                     }
                     Button(action: { isPasswordVisible.toggle() }) {
-                        Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                        Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
                             .foregroundColor(.gray)
                     }
                 }
@@ -49,11 +48,9 @@ struct LoginView: View {
                 Button(action: {
                     // Mock role assignment based on email
                     if email == "farmer@example.com" {
-                        role = "farmer"
-                        isLoggedIn = true
+                        role = .farmer
                     } else if email == "buyer@example.com" {
-                        role = "buyer"
-                        isLoggedIn = true
+                        role = .buyer
                     }
                 }) {
                     Text("Log In")

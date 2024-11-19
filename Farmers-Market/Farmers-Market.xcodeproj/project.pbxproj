@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A21D40E2CECE87D00D0A5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7BA8692CEC969800A0E525 /* Assets.xcassets */; };
 		7A3B9F122CECB8B700B3B657 /* Buyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F112CECB8B700B3B657 /* Buyer.swift */; };
 		7A3B9F142CECB9A800B3B657 /* Farmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F132CECB9A800B3B657 /* Farmer.swift */; };
 		7A3B9F172CECBA9500B3B657 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F162CECBA9500B3B657 /* LoginView.swift */; };
 		7A3B9F192CECC07200B3B657 /* BuyerRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F182CECC07200B3B657 /* BuyerRegistrationView.swift */; };
 		7A3B9F1B2CECC40200B3B657 /* RegistrationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F1A2CECC40200B3B657 /* RegistrationSelectionView.swift */; };
 		7A3B9F1D2CECC43500B3B657 /* FarmerRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F1C2CECC43500B3B657 /* FarmerRegistrationView.swift */; };
+		7A3B9F202CECDAA300B3B657 /* FarmerDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F1F2CECDAA300B3B657 /* FarmerDashboardView.swift */; };
+		7A3B9F222CECDABC00B3B657 /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F212CECDABC00B3B657 /* AddProductView.swift */; };
+		7A3B9F242CECDB6300B3B657 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F232CECDB6300B3B657 /* Product.swift */; };
+		7A3B9F262CECDC4A00B3B657 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F252CECDC4A00B3B657 /* Notification.swift */; };
+		7A3B9F282CECDCF100B3B657 /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F272CECDCF100B3B657 /* EditProductView.swift */; };
+		7A3B9F2A2CECDF9300B3B657 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F292CECDF9300B3B657 /* Role.swift */; };
 		7A7BA8662CEC969700A0E525 /* Farmers_MarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7BA8652CEC969700A0E525 /* Farmers_MarketApp.swift */; };
 		7A7BA8682CEC969700A0E525 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7BA8672CEC969700A0E525 /* MainView.swift */; };
-		7A7BA86A2CEC969800A0E525 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7BA8692CEC969800A0E525 /* Assets.xcassets */; };
 		7A7BA86D2CEC969800A0E525 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7BA86C2CEC969800A0E525 /* Preview Assets.xcassets */; };
 		7A7BA8772CECA34D00A0E525 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7BA8762CECA34D00A0E525 /* HomeView.swift */; };
 		7A7BA8792CECA35A00A0E525 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7BA8782CECA35A00A0E525 /* CategoriesView.swift */; };
@@ -31,6 +37,12 @@
 		7A3B9F182CECC07200B3B657 /* BuyerRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerRegistrationView.swift; sourceTree = "<group>"; };
 		7A3B9F1A2CECC40200B3B657 /* RegistrationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSelectionView.swift; sourceTree = "<group>"; };
 		7A3B9F1C2CECC43500B3B657 /* FarmerRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmerRegistrationView.swift; sourceTree = "<group>"; };
+		7A3B9F1F2CECDAA300B3B657 /* FarmerDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmerDashboardView.swift; sourceTree = "<group>"; };
+		7A3B9F212CECDABC00B3B657 /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
+		7A3B9F232CECDB6300B3B657 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7A3B9F252CECDC4A00B3B657 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		7A3B9F272CECDCF100B3B657 /* EditProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductView.swift; sourceTree = "<group>"; };
+		7A3B9F292CECDF9300B3B657 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		7A7BA8622CEC969700A0E525 /* Farmers-Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmers-Market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7BA8652CEC969700A0E525 /* Farmers_MarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmers_MarketApp.swift; sourceTree = "<group>"; };
 		7A7BA8672CEC969700A0E525 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -66,6 +78,9 @@
 		7A3B9F102CECB89100B3B657 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A3B9F232CECDB6300B3B657 /* Product.swift */,
+				7A3B9F252CECDC4A00B3B657 /* Notification.swift */,
+				7A3B9F292CECDF9300B3B657 /* Role.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -79,6 +94,16 @@
 				7A3B9F1C2CECC43500B3B657 /* FarmerRegistrationView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		7A3B9F1E2CECD9A200B3B657 /* FarmerViews */ = {
+			isa = PBXGroup;
+			children = (
+				7A3B9F1F2CECDAA300B3B657 /* FarmerDashboardView.swift */,
+				7A3B9F212CECDABC00B3B657 /* AddProductView.swift */,
+				7A3B9F272CECDCF100B3B657 /* EditProductView.swift */,
+			);
+			path = FarmerViews;
 			sourceTree = "<group>";
 		};
 		7A7BA8592CEC969700A0E525 = {
@@ -101,7 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				7A7BA8652CEC969700A0E525 /* Farmers_MarketApp.swift */,
-				7A7BA8732CECA21100A0E525 /* Views */,
+				7A3B9F1E2CECD9A200B3B657 /* FarmerViews */,
+				7A7BA8732CECA21100A0E525 /* BuyerViews */,
 				7A3B9F152CECBA7C00B3B657 /* Authentication */,
 				7A3B9F102CECB89100B3B657 /* Models */,
 				7A3B9F0F2CECB88A00B3B657 /* Roles */,
@@ -119,7 +145,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		7A7BA8732CECA21100A0E525 /* Views */ = {
+		7A7BA8732CECA21100A0E525 /* BuyerViews */ = {
 			isa = PBXGroup;
 			children = (
 				7A7BA8672CEC969700A0E525 /* MainView.swift */,
@@ -129,7 +155,7 @@
 				7A7BA87C2CECA36F00A0E525 /* OrdersView.swift */,
 				7A7BA87E2CECA37900A0E525 /* AccountView.swift */,
 			);
-			path = Views;
+			path = BuyerViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,8 +216,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A21D40E2CECE87D00D0A5FA /* Assets.xcassets in Resources */,
 				7A7BA86D2CEC969800A0E525 /* Preview Assets.xcassets in Resources */,
-				7A7BA86A2CEC969800A0E525 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,17 +230,23 @@
 			files = (
 				7A3B9F192CECC07200B3B657 /* BuyerRegistrationView.swift in Sources */,
 				7A3B9F1D2CECC43500B3B657 /* FarmerRegistrationView.swift in Sources */,
+				7A3B9F2A2CECDF9300B3B657 /* Role.swift in Sources */,
 				7A7BA87B2CECA36500A0E525 /* FavoritesView.swift in Sources */,
 				7A3B9F1B2CECC40200B3B657 /* RegistrationSelectionView.swift in Sources */,
 				7A7BA8792CECA35A00A0E525 /* CategoriesView.swift in Sources */,
 				7A7BA8772CECA34D00A0E525 /* HomeView.swift in Sources */,
+				7A3B9F202CECDAA300B3B657 /* FarmerDashboardView.swift in Sources */,
 				7A7BA8682CEC969700A0E525 /* MainView.swift in Sources */,
 				7A7BA87F2CECA37900A0E525 /* AccountView.swift in Sources */,
+				7A3B9F242CECDB6300B3B657 /* Product.swift in Sources */,
+				7A3B9F222CECDABC00B3B657 /* AddProductView.swift in Sources */,
 				7A3B9F122CECB8B700B3B657 /* Buyer.swift in Sources */,
+				7A3B9F282CECDCF100B3B657 /* EditProductView.swift in Sources */,
 				7A7BA8662CEC969700A0E525 /* Farmers_MarketApp.swift in Sources */,
 				7A3B9F142CECB9A800B3B657 /* Farmer.swift in Sources */,
 				7A3B9F172CECBA9500B3B657 /* LoginView.swift in Sources */,
 				7A7BA87D2CECA36F00A0E525 /* OrdersView.swift in Sources */,
+				7A3B9F262CECDC4A00B3B657 /* Notification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

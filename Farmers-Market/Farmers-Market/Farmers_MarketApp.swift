@@ -2,15 +2,17 @@ import SwiftUI
 
 @main
 struct Farmers_MarketApp: App {
-    @State private var isLoggedIn: Bool = false
-    @State private var role = ""
+    @State private var role: Role = .none
     var body: some Scene {
         WindowGroup {
-                    if isLoggedIn {
-                        MainView()
-                    } else {
-                        LoginView(role: $role, isLoggedIn: $isLoggedIn)
-                    }
-                }
+            switch role {
+            case .none:
+                LoginView(role: $role)
+            case .farmer:
+                FarmerDashboardView(role: $role)
+            case .buyer:
+                MainView(role: $role)
+            }
+        }
     }
 }

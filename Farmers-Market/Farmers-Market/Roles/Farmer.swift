@@ -11,6 +11,9 @@ struct Farmer {
     var farmSize: Int
     var phoneNumber: String
     var status: String
+    var rejectionReason: String?
+    var products: [Product]
+    var notifications: [Notification]
     var createdAt: Date
     var updatedAt: Date
 }

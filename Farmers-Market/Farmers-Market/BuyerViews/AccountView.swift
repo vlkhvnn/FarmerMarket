@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AccountView: View {
+    @Binding var role: Role
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -40,7 +41,7 @@ struct AccountView: View {
 
                 // Logout Button
                 Button(action: {
-                    // Logout action
+                    role = .none
                 }) {
                     HStack {
                         Image(systemName: "arrowshape.turn.up.left")
@@ -77,11 +78,5 @@ struct AccountOptionRow: View {
                 .foregroundColor(.gray)
         }
         .padding(.vertical, 8)
-    }
-}
-
-struct AccountView_Previews: PreviewProvider {
-    static var previews: some View {
-        AccountView()
     }
 }

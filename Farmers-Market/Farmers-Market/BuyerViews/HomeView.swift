@@ -22,10 +22,10 @@ struct HomeView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 10) {
-                            CategoryCard(imageName: "apple", label: "Fruits")
+                            CategoryCard(imageName: "apple.logo", label: "Fruits")
                             CategoryCard(imageName: "carrot", label: "Vegetables")
-                            CategoryCard(imageName: "milk", label: "Dairy")
-                            CategoryCard(imageName: "bread", label: "Bakery")
+                            CategoryCard(imageName: "waterbottle.fill", label: "Dairy")
+                            CategoryCard(imageName: "takeoutbag.and.cup.and.straw.fill", label: "Bakery")
                         }
                         .padding(.horizontal)
 
@@ -36,8 +36,8 @@ struct HomeView: View {
 
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
-                                ProductCard(imageName: "apple", title: "Aport Apple", price: "1000 ₸/kg")
-                                ProductCard(imageName: "orange", title: "Egypt Orange", price: "1200 ₸/kg")
+                                ProductCard(imageName: "apples", title: "Aport Apple", price: "1000 ₸/kg")
+                                ProductCard(imageName: "oranges", title: "Egypt Orange", price: "1200 ₸/kg")
                             }
                             .padding(.horizontal)
                         }
@@ -96,7 +96,7 @@ struct ProductCard: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Image(systemName: imageName)
+            Image(imageName)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 100)

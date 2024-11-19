@@ -2,10 +2,10 @@ import SwiftUI
 
 struct FavoritesView: View {
     let favorites = [
-        FavoriteProduct(name: "Aport apple", details: "1 kg", price: "1000 ₸/kg"),
-        FavoriteProduct(name: "Egypt orange", details: "1 kg", price: "1000 ₸/kg"),
-        FavoriteProduct(name: "Cherry tomato", details: "1 kg", price: "1000 ₸/kg"),
-        FavoriteProduct(name: "Mirinda cucumber", details: "1 kg", price: "1000 ₸/kg")
+        FavoriteProduct(name: "Aport apple", details: "1 kg", price: "1000 ₸/kg", image: "apples"),
+        FavoriteProduct(name: "Egypt orange", details: "1 kg", price: "1000 ₸/kg", image: "oranges"),
+        FavoriteProduct(name: "Cherry tomato", details: "1 kg", price: "1000 ₸/kg", image: "tomatoes"),
+        FavoriteProduct(name: "Mirinda cucumber", details: "1 kg", price: "1000 ₸/kg", image: "bananas")
     ]
 
     var body: some View {
@@ -78,6 +78,7 @@ struct FavoriteProduct: Identifiable, Hashable {
     let name: String
     let details: String
     let price: String
+    let image: String
 }
 
 struct FavoritesView_Previews: PreviewProvider {

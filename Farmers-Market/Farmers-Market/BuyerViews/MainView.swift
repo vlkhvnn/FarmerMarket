@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var selection = 0
+    @Binding var role: Role
     
     var body: some View {
         TabView(selection: $selection) {
@@ -29,7 +30,7 @@ struct MainView: View {
                 }
                 .tag(3)
 
-            AccountView()
+            AccountView(role: $role)
                 .tabItem {
                     Label("Account", systemImage: "person.fill")
                 }
