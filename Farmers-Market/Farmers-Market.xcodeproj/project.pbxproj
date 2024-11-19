@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A3B9F122CECB8B700B3B657 /* Buyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F112CECB8B700B3B657 /* Buyer.swift */; };
+		7A3B9F142CECB9A800B3B657 /* Farmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F132CECB9A800B3B657 /* Farmer.swift */; };
+		7A3B9F172CECBA9500B3B657 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F162CECBA9500B3B657 /* LoginView.swift */; };
+		7A3B9F192CECC07200B3B657 /* BuyerRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F182CECC07200B3B657 /* BuyerRegistrationView.swift */; };
+		7A3B9F1B2CECC40200B3B657 /* RegistrationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F1A2CECC40200B3B657 /* RegistrationSelectionView.swift */; };
+		7A3B9F1D2CECC43500B3B657 /* FarmerRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9F1C2CECC43500B3B657 /* FarmerRegistrationView.swift */; };
 		7A7BA8662CEC969700A0E525 /* Farmers_MarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7BA8652CEC969700A0E525 /* Farmers_MarketApp.swift */; };
 		7A7BA8682CEC969700A0E525 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7BA8672CEC969700A0E525 /* MainView.swift */; };
 		7A7BA86A2CEC969800A0E525 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7BA8692CEC969800A0E525 /* Assets.xcassets */; };
@@ -19,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A3B9F112CECB8B700B3B657 /* Buyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buyer.swift; sourceTree = "<group>"; };
+		7A3B9F132CECB9A800B3B657 /* Farmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmer.swift; sourceTree = "<group>"; };
+		7A3B9F162CECBA9500B3B657 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		7A3B9F182CECC07200B3B657 /* BuyerRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerRegistrationView.swift; sourceTree = "<group>"; };
+		7A3B9F1A2CECC40200B3B657 /* RegistrationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSelectionView.swift; sourceTree = "<group>"; };
+		7A3B9F1C2CECC43500B3B657 /* FarmerRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmerRegistrationView.swift; sourceTree = "<group>"; };
 		7A7BA8622CEC969700A0E525 /* Farmers-Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmers-Market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7BA8652CEC969700A0E525 /* Farmers_MarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmers_MarketApp.swift; sourceTree = "<group>"; };
 		7A7BA8672CEC969700A0E525 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -42,6 +54,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A3B9F0F2CECB88A00B3B657 /* Roles */ = {
+			isa = PBXGroup;
+			children = (
+				7A3B9F112CECB8B700B3B657 /* Buyer.swift */,
+				7A3B9F132CECB9A800B3B657 /* Farmer.swift */,
+			);
+			path = Roles;
+			sourceTree = "<group>";
+		};
+		7A3B9F102CECB89100B3B657 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A3B9F152CECBA7C00B3B657 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				7A3B9F162CECBA9500B3B657 /* LoginView.swift */,
+				7A3B9F182CECC07200B3B657 /* BuyerRegistrationView.swift */,
+				7A3B9F1A2CECC40200B3B657 /* RegistrationSelectionView.swift */,
+				7A3B9F1C2CECC43500B3B657 /* FarmerRegistrationView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		7A7BA8592CEC969700A0E525 = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +100,11 @@
 		7A7BA8642CEC969700A0E525 /* Farmers-Market */ = {
 			isa = PBXGroup;
 			children = (
-				7A7BA8732CECA21100A0E525 /* Views */,
 				7A7BA8652CEC969700A0E525 /* Farmers_MarketApp.swift */,
+				7A7BA8732CECA21100A0E525 /* Views */,
+				7A3B9F152CECBA7C00B3B657 /* Authentication */,
+				7A3B9F102CECB89100B3B657 /* Models */,
+				7A3B9F0F2CECB88A00B3B657 /* Roles */,
 				7A7BA8692CEC969800A0E525 /* Assets.xcassets */,
 				7A7BA86B2CEC969800A0E525 /* Preview Content */,
 			);
@@ -160,12 +202,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3B9F192CECC07200B3B657 /* BuyerRegistrationView.swift in Sources */,
+				7A3B9F1D2CECC43500B3B657 /* FarmerRegistrationView.swift in Sources */,
 				7A7BA87B2CECA36500A0E525 /* FavoritesView.swift in Sources */,
+				7A3B9F1B2CECC40200B3B657 /* RegistrationSelectionView.swift in Sources */,
 				7A7BA8792CECA35A00A0E525 /* CategoriesView.swift in Sources */,
 				7A7BA8772CECA34D00A0E525 /* HomeView.swift in Sources */,
 				7A7BA8682CEC969700A0E525 /* MainView.swift in Sources */,
 				7A7BA87F2CECA37900A0E525 /* AccountView.swift in Sources */,
+				7A3B9F122CECB8B700B3B657 /* Buyer.swift in Sources */,
 				7A7BA8662CEC969700A0E525 /* Farmers_MarketApp.swift in Sources */,
+				7A3B9F142CECB9A800B3B657 /* Farmer.swift in Sources */,
+				7A3B9F172CECBA9500B3B657 /* LoginView.swift in Sources */,
 				7A7BA87D2CECA36F00A0E525 /* OrdersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

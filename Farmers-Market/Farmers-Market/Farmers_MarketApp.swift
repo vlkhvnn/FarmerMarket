@@ -1,17 +1,16 @@
-//
-//  Farmers_MarketApp.swift
-//  Farmers-Market
-//
-//  Created by Alikhan Tangirbergen on 19.11.2024.
-//
-
 import SwiftUI
 
 @main
 struct Farmers_MarketApp: App {
+    @State private var isLoggedIn: Bool = false
+    @State private var role = ""
     var body: some Scene {
         WindowGroup {
-            MainView()
-        }
+                    if isLoggedIn {
+                        MainView()
+                    } else {
+                        LoginView(role: $role, isLoggedIn: $isLoggedIn)
+                    }
+                }
     }
 }
