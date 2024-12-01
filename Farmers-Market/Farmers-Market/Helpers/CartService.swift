@@ -2,11 +2,13 @@ import Foundation
 
 class CartService: ObservableObject {
     @Published var cartItems: [CartItem] = []
-
+    
+    private let cartKey = "cartItems"
+    
     func getCartItems() -> [CartItem] {
         return cartItems
     }
-
+    
     func addToCart(item: Product) {
         if let index = cartItems.firstIndex(where: { $0.product.id == item.id }) {
             cartItems[index].quantity += 1
@@ -36,5 +38,9 @@ class CartService: ObservableObject {
     
     func totalAmount() -> Double {
         return Double(cartItems.reduce(0) { $0 + ($1.product.price * Float($1.quantity)) })
+    }
+    
+    func totalQuantity() -> Int {
+        return cartItems.reduce(0) { $0 + $1.quantity }
     }
 }

@@ -12,7 +12,7 @@ struct CartItemView: View {
 
     var body: some View {
         HStack {
-            Image(systemName: "photo")
+            Image(cartItem.product.image)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 60, height: 60)

@@ -1,5 +1,4 @@
 import SwiftUI
-import Foundation
 
 struct HomeView: View {
     @State private var selectedCategory: String = "All"
@@ -7,9 +6,11 @@ struct HomeView: View {
     @State private var isLoading: Bool = true // Loading state
     @State private var errorMessage: String? = nil // Error message for API call
     @State private var searchQuery: String = "" // Search query input
-
+    
     let categories = ["All", "Vegetables", "Fruits", "Bakery", "Dairy"]
-
+    
+    @EnvironmentObject var cartService: CartService
+    
     var filteredProducts: [Product] {
         let filteredByCategory = selectedCategory == "All" ? products : products.filter { $0.category == selectedCategory }
         return searchQuery.isEmpty ? filteredByCategory : filteredByCategory.filter {
@@ -17,7 +18,7 @@ struct HomeView: View {
             $0.description.localizedCaseInsensitiveContains(searchQuery)
         }
     }
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -43,7 +44,7 @@ struct HomeView: View {
                                         .cornerRadius(10)
                                 }
                                 .padding(.horizontal)
-
+                                
                                 // Category Selection
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack {
@@ -60,12 +61,12 @@ struct HomeView: View {
                                     }
                                     .padding(.horizontal)
                                 }
-
+                                
                                 // All Products Section
                                 Text("All Products")
                                     .font(.headline)
                                     .padding(.horizontal)
-
+                                
                                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                                     ForEach(filteredProducts) { product in
                                         NavigationLink(destination: ProductDetailView(product: product)) {
@@ -80,18 +81,16 @@ struct HomeView: View {
                         }
                     }
                 }
-
+                
                 // Fixed Cart Button at the bottom of the screen
                 VStack {
                     Spacer()
                     HStack {
                         Spacer()
-                        Button(action: {
-                            // View Cart Action
-                        }) {
+                        NavigationLink(destination: CartView()) {
                             HStack {
                                 Image(systemName: "cart")
-                                Text("View Cart (3)")
+                                Text("View Cart (\(cartService.totalQuantity()))")
                             }
                             .font(.headline)
                             .foregroundColor(.white)
@@ -103,7 +102,7 @@ struct HomeView: View {
                         .padding(.horizontal, 16) // Horizontal padding
                         Spacer()
                     }
-                    .padding(.bottom, 10) // Bottom padding
+                    .padding(.bottom, 10)
                 }
             }
             .navigationTitle("Farmer's Market")
@@ -111,11 +110,11 @@ struct HomeView: View {
             .onAppear(perform: fetchProducts) // Fetch products when view appears
         }
     }
-
+    
     private func fetchProducts() {
         isLoading = true
         errorMessage = nil
-
+        
         APIService.shared.getAllProducts { result in
             DispatchQueue.main.async {
                 isLoading = false
