@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct RegistrationSelectionView: View {
+    @Binding var role: Role
     var body: some View {
         VStack(spacing: 30) {
             Text("Register as")
                 .font(.title)
                 .fontWeight(.bold)
 
-            NavigationLink(destination: FarmerRegistrationView()) {
+            NavigationLink(destination: FarmerRegistrationView(isRegistered: .constant(false), role: $role)) {
                 Text("Farmer")
                     .font(.headline)
                     .foregroundColor(.white)
@@ -17,7 +18,7 @@ struct RegistrationSelectionView: View {
                     .cornerRadius(10)
             }
 
-            NavigationLink(destination: BuyerRegistrationView(isRegistered: .constant(false))) {
+            NavigationLink(destination: BuyerRegistrationView(role: $role, isRegistered: .constant(false))) {
                 Text("Buyer")
                     .font(.headline)
                     .foregroundColor(.white)

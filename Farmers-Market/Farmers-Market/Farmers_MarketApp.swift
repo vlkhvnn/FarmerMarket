@@ -11,7 +11,8 @@ struct Farmers_MarketApp: App {
             case .farmer:
                 FarmerDashboardView(role: $role)
             case .buyer:
-                MainView(role: $role)
+                TabsView(role: $role)
+                    .environmentObject(CartService())
             }
         }
     }

@@ -9,28 +9,8 @@ struct FarmerDashboardView: View {
             price: 200.0,
             quantity: 10,
             category: "Vegetables",
-            image: "tomato",
-            farmerId: "1",
-            farmer: Farmer(
-                id: "1",
-                email: "farmer@example.com",
-                password: "password123",
-                firstName: "John",
-                lastName: "Doe",
-                farmName: "John's Farm",
-                farmAddress: "123 Farm Lane",
-                farmSize: 50,
-                phoneNumber: "1234567890",
-                status: "Approved",
-                rejectionReason: nil,
-                products: [],
-                notifications: [],
-                createdAt: Date(),
-                updatedAt: Date()
-            ),
-            isOutOfStock: false,
-            createdAt: Date(),
-            updatedAt: Date()
+            image: "tomato", 
+            farmerName: ""
         )
     ]
     @Binding var role: Role

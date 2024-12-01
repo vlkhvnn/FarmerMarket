@@ -57,27 +57,7 @@ struct AddProductView: View {
             quantity: quantityValue,
             category: category,
             image: image,
-            farmerId: "1", // This should come from the logged-in farmer
-            farmer: Farmer(
-                id: "1",
-                email: "farmer@example.com",
-                password: "password123",
-                firstName: "John",
-                lastName: "Doe",
-                farmName: "John's Farm",
-                farmAddress: "123 Farm Lane",
-                farmSize: 50,
-                phoneNumber: "1234567890",
-                status: "Approved",
-                rejectionReason: nil,
-                products: [],
-                notifications: [],
-                createdAt: Date(),
-                updatedAt: Date()
-            ),
-            isOutOfStock: quantityValue == 0,
-            createdAt: Date(),
-            updatedAt: Date()
+            farmerName: ""
         )
 
         products.append(newProduct)

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Product {
+struct Product: Identifiable, Equatable, Decodable {
 
     var id: String
     var name: String
@@ -9,9 +9,5 @@ struct Product {
     var quantity: Int
     var category: String
     var image: String
-    var farmerId: String
-    var farmer: Farmer
-    var isOutOfStock: Bool
-    var createdAt: Date
-    var updatedAt: Date
+    var farmerName: String
 }

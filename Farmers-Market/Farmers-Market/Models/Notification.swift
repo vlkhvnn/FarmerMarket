@@ -1,7 +1,6 @@
 import Foundation
 
-struct Notification: Identifiable {
-
+struct Notification: Identifiable, Equatable, Decodable {
     var id: String
     var farmerId: String
     var farmer: Farmer

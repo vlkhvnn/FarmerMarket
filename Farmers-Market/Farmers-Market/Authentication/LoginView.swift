@@ -1,13 +1,16 @@
 import SwiftUI
 
 struct LoginView: View {
-    @Binding var role: Role // Tracks the user's role ('farmer' or 'buyer')
+    @Binding var role: Role
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isPasswordVisible: Bool = false
+    @State private var isLoading: Bool = false
+    @State private var loginError: String?
+    @State private var chosenRole: Role = .none
 
     var isLoginEnabled: Bool {
-        !email.isEmpty && !password.isEmpty
+        !email.isEmpty && !password.isEmpty && chosenRole != .none
     }
 
     var body: some View {
@@ -16,6 +19,24 @@ struct LoginView: View {
                 Text("Login")
                     .font(.title)
                     .fontWeight(.bold)
+
+                // Role Selection
+                Text("Select Role")
+                    .font(.headline)
+                HStack {
+                    ForEach([Role.farmer, Role.buyer], id: \.self) { roleOption in
+                        Button(action: {
+                            chosenRole = roleOption
+                        }) {
+                            HStack {
+                                Image(systemName: chosenRole == roleOption ? "largecircle.fill.circle" : "circle")
+                                    .foregroundColor(.green)
+                                Text(roleOption.description)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                }
 
                 // Email Input
                 TextField("Email", text: $email)
@@ -45,29 +66,38 @@ struct LoginView: View {
                 .padding(.horizontal)
 
                 // Login Button
-                Button(action: {
-                    // Mock role assignment based on email
-                    if email == "farmer@example.com" {
-                        role = .farmer
-                    } else if email == "buyer@example.com" {
-                        role = .buyer
+                Button(action: handleLogin) {
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.green)
+                            .cornerRadius(10)
+                    } else {
+                        Text("Log In")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(isLoginEnabled ? Color.green : Color.green.opacity(0.5))
+                            .cornerRadius(10)
                     }
-                }) {
-                    Text("Log In")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(isLoginEnabled ? Color.green : Color.green.opacity(0.5))
-                        .cornerRadius(10)
                 }
-                .disabled(!isLoginEnabled)
+                .disabled(!isLoginEnabled || isLoading)
                 .padding(.horizontal)
+
+                if let loginError = loginError {
+                    Text(loginError)
+                        .foregroundColor(.red)
+                        .font(.footnote)
+                        .padding(.horizontal)
+                }
 
                 // Signup Option
                 HStack {
                     Text("Don’t have an account?")
-                    NavigationLink(destination: RegistrationSelectionView()) {
+                    NavigationLink(destination: RegistrationSelectionView(role: $role)) {
                         Text("Signup")
                             .foregroundColor(.green)
                     }
@@ -75,7 +105,46 @@ struct LoginView: View {
 
                 Spacer()
             }
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
+    }
+
+    private func handleLogin() {
+        isLoading = true
+        loginError = nil
+
+        switch chosenRole {
+        case .farmer:
+            APIService.shared.farmerLogin(email: email, password: password) { result in
+                isLoading = false
+                handleFarmerLoginResponse(result: result, currRole: .farmer)
+            }
+        case .buyer:
+            APIService.shared.buyerLogin(email: email, password: password) { result in
+                isLoading = false
+                handleBuyerLoginResponse(result: result, currRole: .buyer)
+            }
+        case .none:
+            isLoading = false
+            loginError = "Please select a role."
+        }
+    }
+
+    private func handleBuyerLoginResponse(result: Result<Buyer, Error>, currRole: Role) {
+        switch result {
+        case .success:
+            role = currRole
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
+
+    private func handleFarmerLoginResponse(result: Result<Farmer, Error>, currRole: Role) {
+        switch result {
+        case .success:
+            role = currRole
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
     }
 }

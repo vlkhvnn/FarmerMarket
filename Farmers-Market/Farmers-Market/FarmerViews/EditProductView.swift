@@ -35,8 +35,7 @@ struct EditProductView: View {
     private func updateProduct() {
         // Find the index of the product in the products array
         if let index = products.firstIndex(where: { $0.id == product.id }) {
-            products[index] = product
-            products[index].updatedAt = Date() // Update the timestamp
+            products[index] = product// Update the timestamp
         }
 
         // Dismiss the edit view
