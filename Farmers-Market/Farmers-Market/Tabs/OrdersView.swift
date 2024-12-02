@@ -1,10 +1,7 @@
 import SwiftUI
 
 struct OrdersView: View {
-    let orders = [
-        Order(orderNumber: "11111", images: ["bananas", "apples", "tomatoes"]),
-        Order(orderNumber: "11111", images: ["tomatoes", "bananas", "oranges"])
-    ]
+    let orders: [Order] = []
 
     var body: some View {
         NavigationView {
@@ -44,14 +41,14 @@ struct OrderItemRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Order № \(order.orderNumber)")
+            Text("Order № \(order.id)")
                 .font(.subheadline)
                 .fontWeight(.medium)
 
             // Order Images
             HStack {
-                ForEach(order.images, id: \.self) { imageName in
-                    Image(imageName)
+                ForEach(order.products, id: \.self) { product in
+                    Image(systemName: "photo")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 50, height: 50)
@@ -72,11 +69,6 @@ struct OrderItemRow: View {
     }
 }
 
-struct Order: Identifiable {
-    let id = UUID()
-    let orderNumber: String
-    let images: [String]
-}
 
 struct OrdersView_Previews: PreviewProvider {
     static var previews: some View {

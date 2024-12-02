@@ -90,7 +90,7 @@ struct HomeView: View {
                         NavigationLink(destination: CartView()) {
                             HStack {
                                 Image(systemName: "cart")
-                                Text("View Cart (\(cartService.totalQuantity()))")
+                                Text("View Cart (\(cartService.productTypeAmount()))")
                             }
                             .font(.headline)
                             .foregroundColor(.white)

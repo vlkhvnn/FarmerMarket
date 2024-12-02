@@ -22,7 +22,7 @@ struct CartItemView: View {
                 Text(cartItem.product.name)
                     .font(.headline)
                     .lineLimit(1)
-                Text("1kg, Price")
+                Text("Price")
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 HStack {

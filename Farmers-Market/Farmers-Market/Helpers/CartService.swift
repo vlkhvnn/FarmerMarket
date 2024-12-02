@@ -40,6 +40,10 @@ class CartService: ObservableObject {
         return Double(cartItems.reduce(0) { $0 + ($1.product.price * Float($1.quantity)) })
     }
     
+    func productTypeAmount() -> Int {
+        cartItems.count
+    }
+    
     func totalQuantity() -> Int {
         return cartItems.reduce(0) { $0 + $1.quantity }
     }

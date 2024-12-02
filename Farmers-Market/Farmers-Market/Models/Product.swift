@@ -9,5 +9,5 @@ struct Product: Identifiable, Equatable, Decodable {
     var quantity: Int
     var category: String
     var image: String
-    var farmerName: String
+    var farmerName: String?
 }

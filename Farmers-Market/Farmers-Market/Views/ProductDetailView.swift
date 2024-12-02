@@ -92,14 +92,14 @@ struct ProductDetailView: View {
                             .font(.subheadline)
                             .foregroundColor(.gray)
                         Spacer()
-                        Text(product.farmerName)
+                        Text(product.farmerName ?? "")
                     }
                     HStack {
                         Text("Seller:")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                         Spacer()
-                        Text("\(product.farmerName)")
+                        Text("\(product.farmerName ?? "")")
                     }
                 }
                 .font(.subheadline)

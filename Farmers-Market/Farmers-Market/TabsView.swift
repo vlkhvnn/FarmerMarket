@@ -19,7 +19,7 @@ struct TabsView: View {
                 }
                 .tag(1)
 
-            OrdersView()
+            OrderHistoryView()
                 .tabItem {
                     Label("Orders", systemImage: "bag.fill")
                 }
